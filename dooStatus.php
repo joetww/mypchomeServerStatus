@@ -82,9 +82,6 @@
                         }
                         $hostdata->{$hostinfo['host']}->result = ''.$status. ' / ' . $this->curlErrNo(curl_errno($ch));
                         $hostdata->{$hostinfo['host']}->group = $groupId;
-//                        $data[$s]['unknow host']['url'] = $v;
-//                        $data[$s]['unknow host']['httpcode'] = $status;
-//                        $data[$s]['unknow host']['reason'] = $this->curlErrNo(curl_errno($ch));
                     }else{
                         $hostdata = json_decode($output);
                         foreach($hostdata as $k => $v){
