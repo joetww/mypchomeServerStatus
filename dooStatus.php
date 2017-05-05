@@ -225,8 +225,8 @@
         {
             $hostname = php_uname('n');
             $data[$hostname]['systemtime'] = time();
-            preg_match_all('/^processor\s+:\s+\d+/', `cat /proc/cpuinfo`, $m);
-            $data[$hostname]['cpu'] = count($m);
+            preg_match_all('/processor\s+:\s+\d+/', `cat /proc/cpuinfo`, $m);
+            $data[$hostname]['cpu'] = count($m[0]);
             $data[$hostname]['established'] = 'none';
             preg_match('/Tasks:\s+(\d+)\s+total,/i', $this->topData, $m, PREG_OFFSET_CAPTURE);
             $data[$hostname]['tasks'] = (int)$m[1][0];
